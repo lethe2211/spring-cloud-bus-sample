@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="configclient1.main" target="11" />
+      <module name="configclient1.test" target="11" />
+      <module name="configclient3.main" target="11" />
+      <module name="configclient3.test" target="11" />
+      <module name="configserver1.main" target="11" />
+      <module name="configserver1.test" target="11" />
+      <module name="configserver2.main" target="11" />
+      <module name="configserver2.test" target="11" />
+      <module name="configserver3.main" target="11" />
+      <module name="configserver3.test" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
