@@ -1,0 +1,26 @@
+server:
+  port: 8889
+spring:
+  cloud:
+    config:
+      fail-fast: true
+      server:
+        git:
+          uri: file://${user.dir}/../../spring-cloud-config-sample-repo # Local repository (just for testing). It assumes we have the target Config Repo in the same level of directory in our local PC as this repo
+          search-paths: "{application}" # The Config Server will start to search a sub directory in the Config Repo, whose name matches with "spring.application.name" of the Config Client. Note that it will still search the root directory of the Config Repo
+          refreshRate: 0 # For how many seconds the Config Server waits until it fetches the latest data from the Config repo. Specifying "0" here (= default value) means the Config Server fetches the latest data for every request from the Config Client https://docs.spring.io/spring-cloud-config/docs/2.2.4.RELEASE/reference/html/#_git_refresh_rate
+          repos:
+            dev: # Configuration for DEV Config Repo
+              pattern: # Specify the patterns when the Config Server uses this "special" repo setting. Basically it should look like "{application (with wildcard)}/{profile (with/without wildcard)}"
+                - "*/dev"
+              uri: https://github.com/lethe2211/spring-cloud-config-sample-repo
+              search-paths: "{application}"
+              clone-on-start: true # Whether the Config Server clones the target repo before it accepts the request from the Config Client. Basically it should be true because otherwise the Config Server cannot know if the Git repo is valid until it it accepts the first request
+              force-pull: true # Whether the Config Server always updates the content of local copy of the Config Repo https://docs.spring.io/spring-cloud-config/docs/2.2.4.RELEASE/reference/html/#_force_pull_in_git_repositories
+            prod: # Configuration for PROD Config Repo
+              pattern:
+                - "*/prod"
+              uri: https://github.com/lethe2211/spring-cloud-config-sample-repo
+              search-paths: "{application}"
+              clone-on-start: true
+              force-pull: true
