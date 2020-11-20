@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/configclient1" />
-        <option name="gradleJvm" value="11 (3)" />
+        <option name="gradleJvm" value="adopt-openjdk-11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/configclient1" />
@@ -14,9 +17,11 @@
         <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/configclient2" />
-        <option name="gradleJvm" value="11 (3)" />
+        <option name="gradleJvm" value="adopt-openjdk-11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/configclient2" />
@@ -25,9 +30,11 @@
         <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/configclient3" />
-        <option name="gradleJvm" value="11 (3)" />
+        <option name="gradleJvm" value="adopt-openjdk-11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/configclient3" />
@@ -36,9 +43,11 @@
         <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/configserver1" />
-        <option name="gradleJvm" value="11 (3)" />
+        <option name="gradleJvm" value="adopt-openjdk-11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/configserver1" />
@@ -47,9 +56,11 @@
         <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/configserver2" />
-        <option name="gradleJvm" value="11 (3)" />
+        <option name="gradleJvm" value="adopt-openjdk-11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/configserver2" />
@@ -58,9 +69,11 @@
         <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/configserver3" />
-        <option name="gradleJvm" value="11 (3)" />
+        <option name="gradleJvm" value="adopt-openjdk-11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/configserver3" />

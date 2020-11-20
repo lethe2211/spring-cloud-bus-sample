@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      uri: "http://localhost:8888" # URL for the Config Server
+      name: "sample-app" # Name of "{application}" when it access to the Config Server (The default value is ${spring.application.name})
+      profile: "default" # "{profile}" when it access to the Config Server (The default value is ${spring.profiles.active})
+      label: "master" # {label} when it access to the Config Server (The default value is "master")
