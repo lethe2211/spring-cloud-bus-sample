@@ -1,53 +1,83 @@
 version: "3"
 services:
+  haproxy-configclient:
+    build:
+      context: ./haproxy-configclient
+    ports:
+      - 8080:8080
+    depends_on:
+      - configclient1
+      - configclient2
+      - configclient3
   configclient1:
     build:
       context: ./configclient1
       args:
         - JAR_FILE=./build/libs/configclient1-0.0.1-SNAPSHOT.jar
     ports:
-      - 8080:8080
+      - 8081:8080
     environment:
-      - CONFIG_SERVER_HOST=configserver1
+      - CONFIG_SERVER_HOST=haproxy-configserver
       - CONFIG_SERVER_PORT=8888
     depends_on:
-      - configserver1
-    entrypoint: /bin/bash -c "sleep 30 && java -jar app.jar"
+      - haproxy-configserver
+    entrypoint: /bin/bash -c "sleep 90 && java -jar app.jar"
   configclient2:
     build:
       context: ./configclient2
       args:
         - JAR_FILE=./build/libs/configclient2-0.0.1-SNAPSHOT.jar
     ports:
-      - 8081:8080
+      - 8082:8080
     environment:
-      - CONFIG_SERVER_HOST=configserver1
+      - CONFIG_SERVER_HOST=haproxy-configserver
       - CONFIG_SERVER_PORT=8888
     depends_on:
-      - configserver1
-    entrypoint: /bin/bash -c "sleep 30 && java -jar app.jar"
+      - haproxy-configserver
+    entrypoint: /bin/bash -c "sleep 90 && java -jar app.jar"
   configclient3:
     build:
       context: ./configclient3
       args:
         - JAR_FILE=./build/libs/configclient3-0.0.1-SNAPSHOT.jar
     ports:
-      - 8082:8080
+      - 8083:8080
     environment:
-      - CONFIG_SERVER_HOST=configserver1
+      - CONFIG_SERVER_HOST=haproxy-configserver
       - CONFIG_SERVER_PORT=8888
     depends_on:
+      - haproxy-configserver
+    entrypoint: /bin/bash -c "sleep 90 && java -jar app.jar"
+  haproxy-configserver:
+    build:
+      context: ./haproxy-configserver
+    ports:
+      - 8888:8888
+    depends_on:
       - configserver1
-    entrypoint: /bin/bash -c "sleep 30 && java -jar app.jar"
+      - configserver2
+      - configserver3
   configserver1:
     build:
       context: ./configserver1
       args:
         - JAR_FILE=./build/libs/configserver1-0.0.1-SNAPSHOT.jar
     ports:
-      - 8888:8888
-#    depends_on:
-#      - rabbitmq
+      - 8889:8888
+  configserver2:
+    build:
+      context: ./configserver2
+      args:
+        - JAR_FILE=./build/libs/configserver2-0.0.1-SNAPSHOT.jar
+    ports:
+      - 8890:8888
+  configserver3:
+    build:
+      context: ./configserver3
+      args:
+        - JAR_FILE=./build/libs/configserver3-0.0.1-SNAPSHOT.jar
+    ports:
+      - 8891:8888
 #  rabbitmq:
 #    container_name: rabbitmq
 #    image: library/rabbitmq:3.8.9
