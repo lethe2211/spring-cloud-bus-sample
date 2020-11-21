@@ -3,10 +3,9 @@ server:
 spring:
   cloud:
     config:
-      fail-fast: true
       server:
         git:
-          uri: file://${user.dir}/../../spring-cloud-config-sample-repo # Local repository (just for testing). It assumes we have the target Config Repo in the same level of directory in our local PC as this repo
+          uri: https://github.com/lethe2211/spring-cloud-config-sample-repo
           search-paths: "{application}" # The Config Server will start to search a sub directory in the Config Repo, whose name matches with "spring.application.name" of the Config Client. Note that it will still search the root directory of the Config Repo
           refreshRate: 0 # For how many seconds the Config Server waits until it fetches the latest data from the Config repo. Specifying "0" here (= default value) means the Config Server fetches the latest data for every request from the Config Client https://docs.spring.io/spring-cloud-config/docs/2.2.4.RELEASE/reference/html/#_git_refresh_rate
           repos:
